@@ -1,0 +1,1128 @@
+[10/28/2026 9:34 PM] NITh.: <div class="mb-2 flex items-center justify-between w-full max-w-[412px] px-2 text-xs text-slate-400">
+        <span class="text-[11px] text-purple-400"><i class="fa-solid fa-circle text-[8px] mr-1 animate-pulse"></i> ដំណើរការរលូនលើ Android/iOS</span>
+        <div class="flex items-center gap-1 bg-slate-900/90 px-2 py-0.5 rounded-full border border-slate-800">
+            <button onclick="setOS('ios')" id="btn-ios" class="px-2 py-0.5 rounded-full text-[10px] font-bold text-white bg-purple-600">iOS</button>
+            <button onclick="setOS('android')" id="btn-android" class="px-2 py-0.5 rounded-full text-[10px] font-bold text-slate-400">Android</button>
+        </div>
+    </div>
+
+    <!-- CLIENT PHONE FRAME -->
+    <div id="phone-frame" class="phone-container bg-darkBg rounded-[42px] border-[10px] border-slate-900 overflow-hidden flex flex-col relative">
+        
+        <div id="os-hardware" class="ios-notch flex items-center justify-center">
+            <div class="w-10 h-1 bg-slate-800 rounded-full"></div>
+        </div>
+
+        <!-- Phone Top Status Bar -->
+        <div class="pt-2 px-6 pb-1 flex justify-between items-center text-[11px] text-slate-300 z-40 bg-darkBg">
+            <span id="current-time" class="font-semibold">09:41</span>
+            <div class="flex items-center gap-1.5 text-xs">
+                <i class="fa-solid fa-signal text-[10px]"></i>
+                <i class="fa-solid fa-wifi text-[10px]"></i>
+                <i class="fa-solid fa-battery-full text-emerald-400"></i>
+            </div>
+        </div>
+
+        <!-- Client App Top Header -->
+        <header class="px-4 py-2.5 flex items-center justify-between bg-darkBg/95 backdrop-blur-md border-b border-slate-800 sticky top-0 z-30">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center font-bold text-sm text-white">
+                    N
+                </div>
+                <div>
+                    <h2 class="font-bold text-xs text-white">NITH DIGITAL</h2>
+                    <p class="text-[9px] text-slate-400">សេវាកម្ម Marketing & Media</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="switchClientTab('cart')" class="relative p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                    <i class="fa-solid fa-cart-shopping text-xs"></i>
+                    <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-pink-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Client App Scrollable Content -->
+        <div id="client-body" class="flex-1 overflow-y-auto px-4 py-3 space-y-4 pb-20">
+            
+            <!-- CLIENT TAB: HOME -->
+            <section id="ctab-home" class="space-y-4">
+                <!-- Banner -->
+                <div class="relative overflow-hidden rounded-2xl p-4 bg-gradient-to-r from-purple-900/80 via-slate-900 to-pink-900/70 border border-purple-500/30">
+                    <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-pink-500/20 text-pink-300 border border-pink-500/40 inline-block mb-1">
+                        🔥 ប្រូម៉ូសិនពិសេស 2026
+                    </span>
+                    <h3 class="text-xs font-bold text-white mb-1">បង្កើនការលក់ និងប្រជាប្រិយភាពអាជីវកម្ម!</h3>
+                    <p class="text-[10px] text-slate-300 mb-2">សេវាកម្ម Boost Page, Followers, Views & Content Design ស្តង់ដារ។</p>
+                    <button onclick="switchClientTab('services')" class="px-3 py-1.5 rounded-xl text-[10px] font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md">
+                        មើលកញ្ចប់សេវាកម្ម
+                    </button>
+                </div>
+
+                <!-- Category Quick Filter -->
+                <div class="space-y-2">
+[10/28/2026 9:34 PM] NITh.: <h4 class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                        <i class="fa-solid fa-border-all text-purple-400"></i> ប្រភេទសេវាកម្ម
+                    </h4>
+                    <div class="grid grid-cols-3 gap-2 text-[10px]">
+                        <button onclick="filterClientServices('all')" class="c-cat-btn active p-2 rounded-xl bg-slate-900 border border-purple-500 text-purple-300 text-center">ទាំងអស់</button>
+                        <button onclick="filterClientServices('facebook')" class="c-cat-btn p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 text-center">Facebook</button>
+                        <button onclick="filterClientServices('tiktok')" class="c-cat-btn p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 text-center">TikTok</button>
+                        <button onclick="filterClientServices('youtube')" class="c-cat-btn p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 text-center">YouTube</button>
+                        <button onclick="filterClientServices('design')" class="c-cat-btn p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 text-center">Design</button>
+                        <button onclick="filterClientServices('web')" class="c-cat-btn p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 text-center">Web & App</button>
+                    </div>
+                </div>
+
+                <!-- Featured Services Grid -->
+                <div class="space-y-2.5">
+                    <h4 class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                        <i class="fa-solid fa-fire text-pink-500"></i> កញ្ចប់ពេញនិយម
+                    </h4>
+                    <div id="client-services-list" class="space-y-2.5">
+                        <!-- Rendered via JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- CLIENT TAB: SERVICES LIST -->
+            <section id="ctab-services" class="hidden space-y-3">
+                <h3 class="text-xs font-bold text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-list-check text-purple-400"></i> កាតាឡុកសេវាកម្មទាំងអស់
+                </h3>
+                <div id="client-full-services" class="space-y-2.5">
+                    <!-- Full Services List Rendered -->
+                </div>
+            </section>
+
+            <!-- CLIENT TAB: CART & CHECKOUT -->
+            <section id="ctab-cart" class="hidden space-y-3">
+                <h3 class="text-xs font-bold text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-cart-shopping text-pink-400"></i> កញ្ចប់ដែលបានជ្រើសរើស
+                </h3>
+                
+                <div id="client-cart-items" class="space-y-2">
+                    <!-- Dynamic Cart items -->
+                </div>
+
+                <div id="client-cart-summary" class="hidden p-3 rounded-2xl bg-slate-900 border border-slate-800 space-y-2.5">
+                    <div class="flex justify-between items-center text-xs border-b border-slate-800 pb-2">
+                        <span class="text-slate-400">ទឹកប្រាក់ត្រូវទូទាត់សរុប:</span>
+                        <span id="cart-total-price" class="text-sm font-extrabold text-pink-400">$0.00</span>
+                    </div>
+
+                    <!-- User inputs -->
+                    <div class="space-y-2 text-xs">
+                        <div>
+                            <label class="block text-[10px] text-slate-300 font-semibold mb-1">តំណភ្ជាប់ Link (Page / Channel / Post) *</label>
+                            <input type="text" id="order-target-link" placeholder="https://..." class="w-full px-2.5 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-white focus:outline-none focus:border-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-slate-300 font-semibold mb-1">លេខទូរស័ព្ទ / Telegram ទំនាក់ទំនង *</label>
+[10/28/2026 9:34 PM] NITh.: <input type="tel" id="order-phone" placeholder="012 345 678" class="w-full px-2.5 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-white focus:outline-none focus:border-purple-500">
+                        </div>
+                    </div>
+
+                    <button onclick="openCheckoutModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 text-white font-bold text-xs shadow-lg shadow-rose-600/30 flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-qrcode"></i> បន្តទៅទូទាត់ប្រាក់ KHQR
+                    </button>
+                </div>
+            </section>
+
+            <!-- CLIENT TAB: ORDERS TRACKING -->
+            <section id="ctab-orders" class="hidden space-y-3">
+                <h3 class="text-xs font-bold text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-clock-rotate-left text-cyan-400"></i> តាមដានស្ថានភាពការកុម្ម៉ង់
+                </h3>
+                <div id="client-order-history" class="space-y-3">
+                    <!-- Rendered Order History -->
+                </div>
+            </section>
+
+            <!-- CLIENT TAB: SUPPORT -->
+            <section id="ctab-support" class="hidden space-y-3">
+                <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-center space-y-2">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 p-0.5 mx-auto">
+                        <div class="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-lg font-bold">ND</div>
+                    </div>
+                    <h4 class="text-xs font-bold text-white">NITH DIGITAL Support</h4>
+                    <p class="text-[10px] text-slate-400">ផ្តល់ជូនការប្រឹក្សា និងបម្រើសេវាកម្ម ២៤ ម៉ោង</p>
+                </div>
+                
+                <a href="https://t.me/zeanithllmabii" target="_blank" class="p-3 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-between text-xs hover:border-cyan-500 transition-all">
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-brands fa-telegram text-cyan-400 text-lg"></i>
+                        <div>
+                            <h5 class="font-bold text-slate-200">Telegram ផ្ទាល់</h5>
+                            <p class="text-[9px] text-slate-400">@zeanithllmabii</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-500"></i>
+                </a>
+            </section>
+
+        </div>
+
+        <!-- Client Bottom Navigation -->
+        <nav class="absolute bottom-0 inset-x-0 bg-slate-900/95 border-t border-slate-800 px-2 py-2 flex justify-around items-center z-40">
+            <button onclick="switchClientTab('home')" id="cnav-home" class="cnav-btn text-purple-400 flex flex-col items-center gap-0.5 text-[9px] font-medium">
+                <i class="fa-solid fa-house text-xs"></i>ទំព័រដើម
+            </button>
+            <button onclick="switchClientTab('services')" id="cnav-services" class="cnav-btn text-slate-500 flex flex-col items-center gap-0.5 text-[9px] font-medium">
+                <i class="fa-solid fa-layer-group text-xs"></i>សេវាកម្ម
+            </button>
+            <button onclick="switchClientTab('cart')" id="cnav-cart" class="cnav-btn text-slate-500 flex flex-col items-center gap-0.5 text-[9px] font-medium">
+                <i class="fa-solid fa-cart-shopping text-xs"></i>កញ្ចប់
+            </button>
+            <button onclick="switchClientTab('orders')" id="cnav-orders" class="cnav-btn text-slate-500 flex flex-col items-center gap-0.5 text-[9px] font-medium">
+                <i class="fa-solid fa-receipt text-xs"></i>ប្រវត្តិ
+            </button>
+            <button onclick="switchClientTab('support')" id="cnav-support" class="cnav-btn text-slate-500 flex flex-col items-center gap-0.5 text-[9px] font-medium">
+[10/28/2026 9:34 PM] NITh.: function addToCart(serviceId) {
+        const s = servicesData.find(item => item.id === serviceId);
+        if (s) {
+            cart.push(s);
+            updateCartUI();
+            showToast(`បានបន្ថែម ${s.name}`, 'fa-solid fa-cart-plus');
+        }
+    }
+
+    function removeFromCart(idx) {
+        cart.splice(idx, 1);
+        updateCartUI();
+    }
+
+    function updateCartUI() {
+        const badge = document.getElementById('cart-badge');
+        const itemsContainer = document.getElementById('client-cart-items');
+        const summary = document.getElementById('client-cart-summary');
+
+        if (cart.length > 0) {
+            badge.textContent = cart.length;
+            badge.classList.remove('hidden');
+        } else {
+            badge.classList.add('hidden');
+        }
+
+        itemsContainer.innerHTML = '';
+        if (cart.length === 0) {
+            itemsContainer.innerHTML = `
+                <div class="text-center py-10 text-slate-500 text-xs">
+                    <i class="fa-solid fa-basket-shopping text-2xl mb-1 block"></i>
+                    មិនទាន់មានសេវាកម្មក្នុងកញ្ចប់
+                </div>
+            `;
+            summary.classList.add('hidden');
+            return;
+        }
+
+        let total = 0;
+        cart.forEach((item, index) => {
+            total += item.price;
+            const div = document.createElement('div');
+            div.className = 'p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex justify-between items-center text-xs';
+            div.innerHTML = `
+                <div>
+                    <h5 class="font-bold text-slate-200">${item.name}</h5>
+                    <span class="text-pink-400 font-bold text-[10px]">$${item.price.toFixed(2)}</span>
+                </div>
+                <button onclick="removeFromCart(${index})" class="text-slate-500 hover:text-red-400 p-1">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            `;
+            itemsContainer.appendChild(div);
+        });
+
+        document.getElementById('cart-total-price').textContent =                <button 
+        summary.classList.remove('hidden');
+    }
+
+    // CHECKOUT & KHQR MODAL
+    function openCheckoutModal() {
+        const link = document.getElementById('order-target-link').value.trim();
+        const phone = document.getElementById('order-phone').value.trim();
+
+        if (!link || !phone) {
+            showToast('សូមបំពេញតំណភ្ជាប់ Link និងលេខទូរស័ព្ទ!', 'fa-solid fa-circle-exclamation');
+            return;
+        }
+
+        const total = cart.reduce((sum, item) => sum + item.price, 0);
+        document.getElementById('modal-total-pay').textContent =body {
+        font-fami
+        selectKHQRBank('aba');
+        document.getElementById('checkout-modal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+        document.getElementById('checkout-modal').classList.add('hidden');
+    }
+
+    function selectKHQRBank(bankKey) {
+        selectedBank = bankKey;
+        ['aba', 'wing', 'acleda'].forEach(b => {
+            const btn = document.getElementById(`tab-${b}`);
+            if (b === bankKey) {
+                btn.className = 'py-1.5 px-1 rounded-xl text-[10px] font-bold border border-red-500 bg-red-600 text-white';
+            } else {
+                btn.className = 'py-1.5 px-1 rounded-xl text-[10px] font-bold border border-transparent text-slate-400';
+            }
+        });
+
+        const data = bankKHQRData[bankKey];
+        document.getElementById('bank-qr-card').innerHTML = `
+            <div class="bg-rose-600 text-white font-black text-[9px] py-0.5 rounded uppercase">${data.title} KHQR</div>
+            <div class="text-[10px] font-bold text-slate-800 mt-1">${data.name}</div>
+            <img src="${data.qrImage}" class="w-32 h-32 mx-auto my-1">
+            <p class="text-[9px] text-slate-600">${data.details}</p>
+        `;
+    }
+
+    function previewReceiptImage(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.
+[10/28/2026 9:34 PM] NITh.: function switchClientTab(tab) {
+        const tabs = ['home', 'services', 'cart', 'orders', 'support'];
+        tabs.forEach(t => {
+            document.getElementById(`ctab-${t}`).classList.add('hidden');
+            const btn = document.getElementById(`cnav-${t}`);
+            if (btn) {
+                btn.classList.remove('text-purple-400');
+                btn.classList.add('text-slate-500');
+            }
+        });
+
+        document.getElementById(`ctab-${tab}`).classList.remove('hidden');
+        const activeBtn = document.getElementById(`cnav-${tab}`);
+        if (activeBtn) {
+            activeBtn.classList.remove('text-slate-500');
+            activeBtn.classList.add('text-purple-400');
+        }
+    }
+
+    // RENDER CLIENT SERVICES
+    function renderClientServices(filter) {
+        const container = document.getElementById('client-services-list');
+        container.innerHTML = '';
+
+        const list = filter === 'all' ? servicesData : servicesData.filter(s => s.platform === filter);
+
+        list.forEach(s => {
+            const card = document.createElement('div');
+            card.className = 'p-3 rounded-2xl bg-slate-900 border border-slate-800 space-y-2';
+            card.innerHTML = `
+                <div class="flex justify-between items-start">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-slate-950 flex items-center justify-center ${s.color || 'text-purple-400'} text-xs">
+                            <i class="${s.icon || 'fa-solid fa-cube'}"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-white">${s.name}</h5>
+                            <span class="text-[9px] text-slate-400">${s.unit}</span>
+                        </div>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full text-[8px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">${s.badge || 'PRO'}</span>
+                </div>
+                <p class="text-[9px] text-slate-400 leading-relaxed">${s.desc}</p>
+                <div class="flex justify-between items-center pt-1 border-t border-slate-800">
+                    <span class="text-xs font-extrabold text-pink-400">$${s.price.toFixed(2)}</span>
+                    <button onclick="addToCart('${s.id}')" class="px-2.5 py-1 rounded-lg bg-purple-600 text-white text-[10px] font-semibold hover:bg-purple-500">
+                        + ជ្រើសរើស
+                    </button>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    function filterClientServices(platform) {
+        document.querySelectorAll('.c-cat-btn').forEach(b => {
+            b.classList.remove('border-purple-500', 'text-purple-300');
+            b.classList.add('border-slate-800', 'text-slate-400');
+        });
+        event.currentTarget.classList.remove('border-slate-800', 'text-slate-400');
+        event.currentTarget.classList.add('border-purple-500', 'text-purple-300');
+        renderClientServices(platform);
+    }
+
+    function renderClientFullServices() {
+        const container = document.getElementById('client-full-services');
+        container.innerHTML = '';
+        servicesData.forEach(s => {
+            const item = document.createElement('div');
+            item.className = 'p-3 rounded-2xl bg-slate-900 border border-slate-800 flex justify-between items-center';
+            item.innerHTML = `
+                <div>
+                    <h5 class="text-xs font-bold text-white">${s.name}</h5>
+                    <p class="text-[9px] text-pink-400 font-bold">$${s.price.toFixed(2)} / ${s.unit}</p>
+                </div>
+                <button onclick="addToCart('${s.id}'); switchClientTab('cart');" class="px-3 py-1 rounded-xl bg-purple-600/20 text-purple-300 border border-purple-500/30 text-[10px]">
+                    កុម្ម៉ង់
+                </button>
+            `;
+            container.appendChild(item);
+        });
+    }
+
+    // CART LOGIC
+[10/28/2026 9:34 PM] NITh.: onload = function(e) {
+                uploadedReceiptBase64 = e.target.result;
+                document.getElementById('receipt-img-preview').src = uploadedReceiptBase64;
+                document.getElementById('receipt-preview-box').classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function submitClientOrder() {
+        if (!uploadedReceiptBase64) {
+            showToast('សូមUpload រូបថតវិក្កយបត្រស្កែនទូទាត់!', 'fa-solid fa-image');
+            return;
+        }
+
+        const link = document.getElementById('order-target-link').value.trim();
+        const phone = document.getElementById('order-phone').value.trim();
+        const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+        const newOrder = {
+            id: 'ND-' + Math.floor(1000 + Math.random() * 9000),
+            clientPhone: phone,
+            targetLink: link,
+            serviceName: cart.map(i => i.name).join(', '),
+            price: total,
+            bank: bankKHQRData[selectedBank].title,
+            receiptImg: uploadedReceiptBase64,
+            status: 'pending',
+            date: new Date().toLocaleString('km-KH')
+        };
+
+        ordersData.unshift(newOrder);
+        saveData();
+
+        // Clear inputs
+        cart = [];
+        uploadedReceiptBase64 = null;
+        document.getElementById('receipt-file-input').value = '';
+        document.getElementById('receipt-preview-box').classList.add('hidden');
+        document.getElementById('order-target-link').value = '';
+        document.getElementById('order-phone').value = '';
+        updateCartUI();
+        closeCheckoutModal();
+
+        switchClientTab('orders');
+        showToast('ការបញ្ជាទិញបានផ្ញើជោគជ័យ! រង់ចាំការផ្ទៀងផ្ទាត់', 'fa-solid fa-circle-check');
+    }
+
+    function renderClientOrderHistory() {
+        const container = document.getElementById('client-order-history');
+        container.innerHTML = '';
+
+        if (ordersData.length === 0) {
+            container.innerHTML = '<p class="text-xs text-slate-500 text-center py-6">គ្មានប្រវត្តិការកុម្ម៉ង់នៅឡើយ</p>';
+            return;
+        }
+
+        ordersData.forEach(ord => {
+            let statusBadge = '';
+            if (ord.status === 'pending') statusBadge = '<span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 text-[9px] font-bold">រង់ចាំពិនិត្យ</span>';
+            else if (ord.status === 'processing') statusBadge = '<span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[9px] font-bold">កំពុងរត់...</span>';
+            else if (ord.status === 'completed') statusBadge = '<span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[9px] font-bold">ជោគជ័យ</span>';
+            else statusBadge = '<span class="px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 text-[9px] font-bold">បដិសេធ</span>';
+
+            const card = document.createElement('div');
+            card.className = 'p-3 rounded-2xl bg-slate-900 border border-slate-800 space-y-1 text-xs';
+            card.innerHTML = `
+                <div class="flex justify-between items-center">
+                    <span class="font-bold text-purple-400">#${ord.id}</span>
+                    ${statusBadge}
+                </div>
+                <h5 class="font-bold text-slate-200">${ord.serviceName}</h5>
+                <div class="flex justify-between text-[10px] text-slate-400 pt-1">
+                    <span>តម្លៃ: <b class="text-pink-400">$${ord.price.toFixed(2)}</b></span>
+                    <span>${ord.date}</span>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // ADMIN DASHBOARD LOGIC
+    function switchAdminTab(tab) {
+        ['orders', 'packages', 'telegram'].forEach(t => {
+            document.getElementById(`atab-${t}`).classList.add('hidden');
+            document.getElementById(`atab-btn-${t}`).className = 'atab-btn px-4 py-2 rounded-xl bg-slate-900 text-slate-400 font-bold hover:text-white shrink-0';
+        });
+        document.getElementById(`atab-${tab}`).classList.remove('hidden');
+[10/28/2026 9:34 PM] NITh.: <i class="fa-solid fa-headset text-xs"></i>ជំនួយ
+            </button>
+        </nav>
+
+        <div id="os-home-bar" class="absolute bottom-1 left-1/2 -translate-x-1/2 w-28 h-1 bg-slate-700 rounded-full z-50"></div>
+    </div>
+</main>
+
+<!-- SECTION 2: ADMIN DASHBOARD VIEW -->
+<main id="main-admin-view" class="w-full max-w-6xl hidden space-y-6">
+    
+    <!-- Metrics Stats Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-1">
+            <span class="text-[11px] text-slate-400">ចំណូលសរុប (Total Revenue)</span>
+            <h3 id="stat-revenue" class="text-xl font-extrabold text-emerald-400">$0.00</h3>
+            <span class="text-[10px] text-emerald-500"><i class="fa-solid fa-arrow-up text-[8px]"></i> តាមប្រព័ន្ធ KHQR</span>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-1">
+            <span class="text-[11px] text-slate-400">Order កំពុងរត់ (Active)</span>
+            <h3 id="stat-active-orders" class="text-xl font-extrabold text-purple-400">0</h3>
+            <span class="text-[10px] text-purple-400">ទាមទារការបន្តធ្វើ</span>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-1">
+            <span class="text-[11px] text-slate-400">Order រង់ចាំការផ្ទៀងផ្ទាត់</span>
+            <h3 id="stat-pending-orders" class="text-xl font-extrabold text-amber-400">0</h3>
+            <span class="text-[10px] text-amber-500">រង់ចាំ Check Receipt</span>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-1">
+            <span class="text-[11px] text-slate-400">Order ជោគជ័យសរុប</span>
+            <h3 id="stat-completed-orders" class="text-xl font-extrabold text-cyan-400">0</h3>
+            <span class="text-[10px] text-cyan-500">សម្រេចបាន 100%</span>
+        </div>
+    </div>
+
+    <!-- Main Admin Tabs Navigation -->
+    <div class="flex items-center gap-2 border-b border-slate-800 pb-2 overflow-x-auto text-xs">
+        <button onclick="switchAdminTab('orders')" id="atab-btn-orders" class="atab-btn active px-4 py-2 rounded-xl bg-purple-600 text-white font-bold shrink-0">
+            <i class="fa-solid fa-list-check mr-1.5"></i> គ្រប់គ្រងការបញ្ជាទិញ (Orders)
+        </button>
+        <button onclick="switchAdminTab('packages')" id="atab-btn-packages" class="atab-btn px-4 py-2 rounded-xl bg-slate-900 text-slate-400 font-bold hover:text-white shrink-0">
+            <i class="fa-solid fa-boxes-packing mr-1.5"></i> កែប្រែកញ្ចប់សេវា & តម្លៃ
+        </button>
+        <button onclick="switchAdminTab('telegram')" id="atab-btn-telegram" class="atab-btn px-4 py-2 rounded-xl bg-slate-900 text-slate-400 font-bold hover:text-white shrink-0">
+            <i class="fa-brands fa-telegram mr-1.5"></i> Telegram Notification Alert
+        </button>
+    </div>
+
+    <!-- ADMIN TAB 1: ORDER MANAGEMENT TABLE -->
+    <section id="atab-orders" class="space-y-4">
+        <div class="flex justify-between items-center">
+            <h3 class="text-sm font-bold text-white">បញ្ជីការបញ្ជាទិញរបស់អតិថិជន</h3>
+            <span class="text-xs text-slate-400">កែប្រែស្ថានភាពភ្លាមៗ (Real-time Sync)</span>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/90">
+            <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                    <tr class="bg-slate-950 text-slate-400 border-b border-slate-800">
+                        <th class="p-3">Order ID</th>
+                        <th class="p-3">អតិថិជន & Contact</th>
+                        <th class="p-3">កញ្ចប់សេវា</th>
+                        <th class="p-3">តម្លៃ</th>
+                        <th class="p-3">ធនាគារ KHQR</th>
+                        <th class="p-3">វិក្កយបត្រ (Receipt)</th>
+                        <th class="p-3">ស្ថានភាព Order</th>
+                        <th class="p-3 text-right">សកម្មភាព</th>
+                    </tr>
+                </thead>
+[10/28/2026 9:34 PM] NITh.: document.getElementById(`atab-btn-${tab}`).className = 'atab-btn active px-4 py-2 rounded-xl bg-purple-600 text-white font-bold shrink-0';
+    }
+
+    function renderAdminDashboard() {
+        // Calculate Metrics
+        const totalRevenue = ordersData.filter(o => o.status === 'completed').reduce((sum, o) => sum + o.price, 0);
+        const activeOrders = ordersData.filter(o => o.status === 'processing').length;
+        const pendingOrders = ordersData.filter(o => o.status === 'pending').length;
+        const completedOrders = ordersData.filter(o => o.status === 'completed').length;
+
+        document.getElementById('stat-revenue').textContent =xt-white">NITH DIGITAL</h2>
+   
+        document.getElementById('stat-active-orders').textContent = activeOrders;
+        document.getElementById('stat-pending-orders').textContent = pendingOrders;
+        document.getElementById('stat-completed-orders').textContent = completedOrders;
+
+        // Render Orders Table
+        const tbody = document.getElementById('admin-orders-table-body');
+        tbody.innerHTML = '';
+
+        ordersData.forEach(ord => {
+            const tr = document.createElement('tr');
+            tr.className = 'border-b border-slate-800/60 hover:bg-slate-950/50';
+            tr.innerHTML = `
+                <td class="p-3 font-bold text-purple-400">#${ord.id}</td>
+                <td class="p-3">
+                    <div class="font-semibold text-slate-200">${ord.clientPhone}</div>
+                    <a href="${ord.targetLink}" target="_blank" class="text-[10px] text-cyan-400 underline truncate max-w-[120px] block">Link Target</a>
+                </td>
+                <td class="p-3 text-slate-300">${ord.serviceName}</td>
+                <td class="p-3 font-bold text-pink-400">$${ord.price.toFixed(2)}</td>
+                <td class="p-3 text-slate-400">${ord.bank}</td>
+                <td class="p-3">
+                    ￼{ord.receiptImg}')" class="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:text-white text-[10px]"><i class="fa-solid fa-image mr-1"></i>មើល Receipt</button>` : '<span class="text-slate-600">គ្មាន</span>'}
+                </td>
+                <td class="p-3">
+                    <select onchange="changeOrderStatus('${ord.id}', this.value)" class="bg-slate-950 border border-slate-800 text-[10px] rounded-lg px-2 py-1 text-slate-200">
+                        <option value="pending" ${ord.status === 'pending' ? 'selected' : ''}>Pending (រង់ចាំ)</option>
+                        <option value="processing" ${ord.status === 'processing' ? 'selected' : ''}>Processing (កំពុងរត់)</option>
+                        <option value="completed" ${ord.status === 'completed' ? 'selected' : ''}>Completed (ជោគជ័យ)</option>
+                        <option value="rejected" ${ord.status === 'rejected' ? 'selected' : ''}>Rejected (បដិសេធ)</option>
+                    </select>
+                </td>
+                <td class="p-3 text-right space-x-1">
+                    <button onclick="deleteOrder('${ord.id}')" class="p-1.5 rounded bg-red-600/20 text-red-400 hover:bg-red-600 hover:text-white text-[10px]">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        // Render Packages Admin Grid
+        const pkgGrid = document.getElementById('admin-packages-grid');
+        pkgGrid.innerHTML = '';
+        servicesData.forEach(s => {
+            const card = document.createElement('div');
+            card.className = 'p-4 rounded-2xl bg-slate-900 border border-slate-800 flex justify-between items-start text-xs';
+            card.innerHTML = `
+                <div class="space-y-1">
+                    <span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[9px] uppercase font-bold">${s.platform}</span>
+                    <h4 class="font-bold text-white text-sm">${s.name}</h4>
+                    <p class="text-slate-400 text-[10px]">￼${s.price.toFixed(2)}</b></p>
+                </div>
+[10/28/2026 9:34 PM] NITh.: <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    darkBg: '#05070c',
+                    cardBg: '#0d1322',
+                    cardHover: '#141d33',
+                    brandPurple: '#8b5cf6',
+                    brandPink: '#ec4899',
+                    brandCyan: '#06b6d4',
+                    brandKhqr: '#e11d48'
+                },
+                fontFamily: {
+                    khmer: ['"Kantumruy Pro"', 'sans-serif']
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    body {
+        font-family: 'Kantumruy Pro', sans-serif;
+        background-color: #030508;
+        color: #f3f4f6;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #1f293d;
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #8b5cf6;
+    }
+
+    .phone-container {
+        width: 100%;
+        max-width: 412px;
+        height: 840px;
+        max-height: 92vh;
+        box-shadow: 0 0 50px rgba(139, 92, 246, 0.2), 0 20px 40px rgba(0,0,0,0.9);
+        position: relative;
+    }
+
+    .ios-notch {
+        width: 130px;
+        height: 24px;
+        background: #000;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom-left-radius: 14px;
+        border-bottom-right-radius: 14px;
+        z-index: 50;
+    }
+
+    .android-punch {
+        width: 14px;
+        height: 14px;
+        background: #000;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 50;
+        border: 1px solid #1f2937;
+    }
+</style>
+<!-- GLOBAL TOP CONTROL BAR (CLIENT VS ADMIN SWITCHER) -->
+<header class="w-full max-w-6xl mb-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-3 flex flex-wrap items-center justify-between gap-3 shadow-xl backdrop-blur-md">
+    <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 via-pink-500 to-cyan-400 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-purple-500/30">
+            ND
+        </div>
+        <div>
+            <h1 class="font-extrabold text-base bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                NITH DIGITAL Commercial Suite
+            </h1>
+            <p class="text-[11px] text-slate-400">ប្រព័ន្ធគ្រប់គ្រងអាជីវកម្ម និង App សម្រាប់អតិថិជន</p>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+        <!-- Mode Switcher Buttons -->
+        <div class="bg-slate-950 p-1 rounded-xl border border-slate-800 flex items-center gap-1">
+            <button id="mode-client-btn" onclick="switchMainMode('client')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md">
+                <i class="fa-solid fa-mobile-screen-button mr-1.5"></i> Client App View
+            </button>
+            <button id="mode-admin-btn" onclick="switchMainMode('admin')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">
+                <i class="fa-solid fa-chart-line mr-1.5"></i> Admin Dashboard
+            </button>
+        </div>
+
+        <!-- Data Export Backup Button -->
+        <button onclick="exportDataBackup()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs flex items-center gap-1.5" title="Export Backup JSON">
+            <i class="fa-solid fa-download"></i>
+            <span class="hidden sm:inline">Backup</span>
+        </button>
+    </div>
+</header>
+
+<!-- SECTION 1: CLIENT APP CONTAINER VIEW -->
+<main id="main-client-view" class="w-full flex flex-col items-center justify-center">
+    
+    <!-- Phone Simulator Controls -->
+[10/28/2026 9:34 PM] NITh.: <button onclick="deletePackage('${s.id}')" class="p-2 text-slate-500 hover:text-red-400">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            `;
+            pkgGrid.appendChild(card);
+        });
+    }
+
+    function changeOrderStatus(orderId, newStatus) {
+        const ord = ordersData.find(o => o.id === orderId);
+        if (ord) {
+            ord.status = newStatus;
+            saveData();
+            showToast(`បានប្តូរស្ថានភាព #${orderId} ទៅ ${newStatus}`, 'fa-solid fa-rotate');
+        }
+    }
+
+    function deleteOrder(orderId) {
+        ordersData = ordersData.filter(o => o.id !== orderId);
+        saveData();
+        showToast('បានលុប Order រួចរាល់', 'fa-solid fa-trash');
+    }
+
+    function viewReceiptFull(imgSrc) {
+        document.getElementById('full-receipt-img').src = imgSrc;
+        document.getElementById('receipt-view-modal').classList.remove('hidden');
+    }
+
+    function closeReceiptViewModal() {
+        document.getElementById('receipt-view-modal').classList.add('hidden');
+    }
+
+    // ADD PACKAGE MODAL LOGIC
+    function openAddPackageModal() {
+        document.getElementById('admin-pkg-modal').classList.remove('hidden');
+    }
+    function closeAddPackageModal() {
+        document.getElementById('admin-pkg-modal').classList.add('hidden');
+    }
+    function savePackageForm(e) {
+        e.preventDefault();
+        const newPkg = {
+            id: 'pkg-' + Date.now(),
+            name: document.getElementById('pkg-name').value,
+            platform: document.getElementById('pkg-platform').value,
+            price: parseFloat(document.getElementById('pkg-price').value),
+            unit: document.getElementById('pkg-unit').value,
+            desc: document.getElementById('pkg-desc').value,
+            icon: 'fa-solid fa-star',
+            color: 'text-purple-400',
+            badge: 'NEW'
+        };
+        servicesData.push(newPkg);
+        saveData();
+        renderClientServices('all');
+        closeAddPackageModal();
+        showToast('បានបន្ថែមសេវាកម្មថ្មីជោគជ័យ!', 'fa-solid fa-circle-check');
+    }
+
+    function deletePackage(id) {
+        servicesData = servicesData.filter(s => s.id !== id);
+        saveData();
+        renderClientServices('all');
+        showToast('បានលុបសេវាកម្ម', 'fa-solid fa-trash');
+    }
+
+    // TELEGRAM ALERT SIMULATOR
+    function testTelegramAlert() {
+        const chatId = document.getElementById('tg-chat-id').value;
+        showToast(`បានផ្ញើការសាកល្បងទៅកាន់ ${chatId} ជោគជ័យ!`, 'fa-brands fa-telegram');
+    }
+
+    // BACKUP DATA EXPORT
+    function exportDataBackup() {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ services: servicesData, orders: ordersData }, null, 2));
+        const dlAnchorElem = document.createElement('a');
+        dlAnchorElem.setAttribute("href", dataStr);
+        dlAnchorElem.setAttribute("download", `NITH_DIGITAL_Backup_${Date.now()}.json`);
+        dlAnchorElem.click();
+        showToast('បានទាញយកឯកសារ Backup រួចរាល់!', 'fa-solid fa-download');
+    }
+
+    // TOAST SYSTEM
+    function showToast(msg, icon = 'fa-solid fa-circle-check') {
+        const toast = document.getElementById('toast');
+        document.getElementById('toast-msg').textContent = msg;
+        document.getElementById('toast-icon').className =tify-center">0</span>
+      
+
+        toast.classList.remove('-translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('-translate-y-20', 'opacity-0');
+        }, 3000);
+    }
+</script>
+[10/28/2026 9:34 PM] NITh.: <tbody id="admin-orders-table-body">
+                    <!-- Rendered via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ADMIN TAB 2: PACKAGES & PRICING EDITOR -->
+    <section id="atab-packages" class="hidden space-y-4">
+        <div class="flex justify-between items-center">
+            <h3 class="text-sm font-bold text-white">គ្រប់គ្រងកញ្ចប់សេវាកម្ម (Package Management)</h3>
+            <button onclick="openAddPackageModal()" class="px-3.5 py-2 rounded-xl bg-purple-600 text-white font-bold text-xs hover:bg-purple-500 transition-all">
+                <i class="fa-solid fa-plus mr-1"></i> បន្ថែមសេវាកម្មថ្មី
+            </button>
+        </div>
+
+        <div id="admin-packages-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Rendered Packages Cards -->
+        </div>
+    </section>
+
+    <!-- ADMIN TAB 3: TELEGRAM BOT SETTINGS -->
+    <section id="atab-telegram" class="hidden space-y-4">
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-3 max-w-xl">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                <i class="fa-brands fa-telegram text-cyan-400 text-base"></i> Telegram Notification Alert Setting
+            </h3>
+            <p class="text-xs text-slate-400">កំណត់ប្រព័ន្ធផ្ញើសារប្រាប់ Admin ស្វ័យប្រវត្តិ ពេលមាន Order ថ្មីមកដល់។</p>
+            
+            <div class="space-y-2 text-xs">
+                <div>
+                    <label class="block text-slate-300 mb-1">Telegram Bot Token (Optional)</label>
+                    <input type="text" id="tg-bot-token" placeholder="bot123456789:ABCdef..." value="758912345:AAF-MockTokenForDemo" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-white">
+                </div>
+                <div>
+                    <label class="block text-slate-300 mb-1">Admin Chat ID / Username</label>
+                    <input type="text" id="tg-chat-id" placeholder="@zeanithllmabii" value="@zeanithllmabii" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-white">
+                </div>
+            </div>
+
+            <button onclick="testTelegramAlert()" class="px-4 py-2 rounded-xl bg-cyan-600 text-white font-bold text-xs hover:bg-cyan-500">
+                <i class="fa-solid fa-paper-plane mr-1"></i> សាកល្បងផ្ញើសារប្រព័ន្ធ (Test Alert)
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<!-- CLIENT KHQR CHECKOUT MODAL -->
+<div id="checkout-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-3">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-xs p-4 text-center space-y-3 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        
+        <button onclick="closeCheckoutModal()" class="absolute top-3 right-3 w-7 h-7 bg-slate-800 rounded-full text-slate-400 hover:text-white flex items-center justify-center text-xs">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-rose-600/20 border border-rose-500/40 text-rose-400 text-xs font-bold">
+            <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+            ស្កែនទូទាត់ប្រាក់តាម KHQR
+        </div>
+
+        <!-- Bank Selector Tabs -->
+        <div class="grid grid-cols-3 gap-1 bg-slate-950 p-1 rounded-2xl border border-slate-800">
+            <button id="tab-aba" onclick="selectKHQRBank('aba')" class="py-1.5 px-1 rounded-xl text-[10px] font-bold border border-red-500 bg-red-600 text-white">ABA</button>
+            <button id="tab-wing" onclick="selectKHQRBank('wing')" class="py-1.5 px-1 rounded-xl text-[10px] font-bold border border-transparent text-slate-400">Wing</button>
+            <button id="tab-acleda" onclick="selectKHQRBank('acleda')" class="py-1.5 px-1 rounded-xl text-[10px] font-bold border border-transparent text-slate-400">ACLEDA</button>
+        </div>
+[10/28/2026 9:34 PM] NITh.: <!-- Display Container KHQR Card -->
+        <div id="bank-qr-card" class="bg-white rounded-2xl p-3 border-2 border-rose-600 text-slate-900 space-y-2">
+            <!-- Dynamic QR -->
+        </div>
+
+        <!-- Upload Receipt Simulation -->
+        <div class="text-left space-y-1 pt-1 border-t border-slate-800">
+            <label class="block text-[10px] font-semibold text-slate-300">ទម្លាក់រូបថតវិក្កយបត្រ/Receipt *</label>
+            <input type="file" id="receipt-file-input" accept="image/*" onchange="previewReceiptImage(event)" class="w-full text-[10px] text-slate-400 file:mr-2 file:py-1 file:px-2.5 file:rounded-xl file:border-0 file:text-[10px] file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-500">
+            <div id="receipt-preview-box" class="hidden mt-1 text-center">
+                <img id="receipt-img-preview" src="" alt="Receipt Preview" class="w-20 h-20 object-cover rounded-xl mx-auto border border-slate-700">
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center px-1 text-xs">
+            <span class="text-slate-400">ទឹកប្រាក់ត្រូវបង់:</span>
+            <span id="modal-total-pay" class="text-base font-black text-pink-400">$0.00</span>
+        </div>
+
+        <button onclick="submitClientOrder()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs shadow-lg shadow-emerald-600/30">
+            <i class="fa-solid fa-circle-check mr-1"></i> ខ្ញុំបានបង់ប្រាក់រួចរាល់
+        </button>
+    </div>
+</div>
+
+<!-- ADMIN: ADD PACKAGE MODAL -->
+<div id="admin-pkg-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-3">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-sm p-5 space-y-3 shadow-2xl relative">
+        <button onclick="closeAddPackageModal()" class="absolute top-3 right-3 text-slate-400 hover:text-white">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3 class="text-sm font-bold text-white">បន្ថែម/កែប្រែកញ្ចប់សេវាកម្ម</h3>
+        
+        <form onsubmit="savePackageForm(event)" class="space-y-2.5 text-xs">
+            <div>
+                <label class="block text-slate-300 mb-1">ឈ្មោះសេវាកម្ម</label>
+                <input type="text" id="pkg-name" required placeholder="ឧ. Facebook Boost Likes" class="w-full px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-white">
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+                <div>
+                    <label class="block text-slate-300 mb-1">ប្រភេទ Platform</label>
+                    <select id="pkg-platform" class="w-full px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-white">
+                        <option value="facebook">Facebook</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="design">Graphic Design</option>
+                        <option value="web">Web Development</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-slate-300 mb-1">តម្លៃ ($)</label>
+                    <input type="number" step="0.01" id="pkg-price" required placeholder="15.00" class="w-full px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-white">
+                </div>
+            </div>
+            <div>
+                <label class="block text-slate-300 mb-1">ចំនួនបរិមាណ (Unit)</label>
+                <input type="text" id="pkg-unit" required placeholder="ឧ. 5,000 Likes" class="w-full px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-white">
+            </div>
+            <div>
+                <label class="block text-slate-300 mb-1">ការបរិយាយ</label>
+                <textarea id="pkg-desc" rows="2" placeholder="ព័ត៌មានលម្អិត..." class="w-full px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-white"></textarea>
+            </div>
+[10/28/2026 9:34 PM] NITh.: <button type="submit" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-bold hover:bg-purple-500">រក្សាទុកសេវាកម្ម</button>
+        </form>
+    </div>
+</div>
+
+<!-- VIEW RECEIPT FULL IMAGE MODAL -->
+<div id="receipt-view-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="relative max-w-sm w-full bg-slate-900 border border-slate-800 p-4 rounded-3xl text-center space-y-3">
+        <button onclick="closeReceiptViewModal()" class="absolute top-3 right-3 text-slate-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+        <h4 class="text-xs font-bold text-white">រូបថតវិក្កយបត្រ (Receipt Screenshot)</h4>
+        <img id="full-receipt-img" src="" class="w-full max-h-[60vh] object-contain rounded-2xl border border-slate-800 mx-auto">
+    </div>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 bg-slate-900 border border-purple-500 text-white px-4 py-2.5 rounded-2xl shadow-2xl flex items-center gap-2 text-xs z-50 transform -translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400"></i>
+    <span id="toast-msg">សារប្រព័ន្ធ</span>
+</div>
+
+<!-- APPLICATION LOGIC SCRIPT -->
+<script>
+    // DEFAULT DATA
+    const defaultServices = [
+        {
+            id: 'pkg-1',
+            platform: 'facebook',
+            name: 'Facebook Page Likes & Follows',
+            unit: '5,000 Likes',
+            price: 15.00,
+            desc: 'បង្កើនអ្នក Like & Follow ពិតៗ រហ័ស និងមានសុវត្ថិភាពខ្ពស់ 100%',
+            icon: 'fa-brands fa-facebook',
+            color: 'text-blue-500',
+            badge: 'HOT'
+        },
+        {
+            id: 'pkg-2',
+            platform: 'tiktok',
+            name: 'TikTok Followers & Views',
+            unit: '3,000 Followers',
+            price: 12.00,
+            desc: 'ជួយឱ្យ Account TikTok ឡើង Popular និង Verfied លឿនរហ័ស',
+            icon: 'fa-brands fa-tiktok',
+            color: 'text-pink-500',
+            badge: 'Popular'
+        },
+        {
+            id: 'pkg-3',
+            platform: 'youtube',
+            name: 'YouTube Watch Time & Subs',
+            unit: 'Monetize Package',
+            price: 45.00,
+            desc: 'កញ្ចប់គ្រប់លក្ខខណ្ឌស្នើកាត់ប្រាក់ 4,000 ម៉ោង & 1,000 Subscribers',
+            icon: 'fa-brands fa-youtube',
+            color: 'text-red-500',
+            badge: 'VIP'
+        },
+        {
+            id: 'pkg-4',
+            platform: 'design',
+            name: 'Graphic Design & Cover Art',
+            unit: '3 Designs',
+            price: 25.00,
+            desc: 'ឌីហ្សាញ Poster អាជីវកម្ម គម្របផេក និង Banner ពាណិជ្ជកម្ម',
+            icon: 'fa-solid fa-palette',
+            color: 'text-purple-400',
+            badge: 'Pro'
+        },
+        {
+            id: 'pkg-5',
+            platform: 'web',
+            name: 'Landing Page & App Setup',
+            unit: 'Full Website',
+            price: 150.00,
+            desc: 'បង្កើត Web App លក់ដូរទំនិញ ភ្ជាប់ប្រព័ន្ធ KHQR និង Domain ផ្ទាល់ខ្លួន',
+            icon: 'fa-solid fa-code',
+            color: 'text-cyan-400',
+            badge: 'Agency'
+        }
+    ];
+
+    const defaultOrders = [
+        {
+            id: 'ND-9012',
+            clientPhone: '012 888 999',
+            targetLink: 'https://facebook.com/mybusinesspage',
+            serviceName: 'Facebook Page Likes & Follows',
+            price: 15.00,
+            bank: 'ABA Bank',
+            receiptImg: 'https://placehold.co/300x400/1e293b/ffffff?text=ABA+Receipt+Sample',
+            status: 'pending', // pending, processing, completed, rejected
+            date: '28 តុលា 2026 09:15'
+        }
+    ];
+
+    // KHQR BANKS
+    const bankKHQRData = {
+        aba: {
+            title: 'ABA Bank',
+            name: 'SUN PHANITH',
+            qrImage: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=KHQR_ABA_SUN_PHANITH_PAYMENT',
+            details: 'ស្កែនទូទាត់តាម ABA Mobile KHQR'
+[10/28/2026 9:34 PM] NITh.: },
+        wing: {
+            title: 'Wing Bank',
+            name: 'PHANITH SUN',
+            qrImage: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=KHQR_WING_PHANITH_SUN_PAYMENT',
+            details: 'គណនីរៀល: 103 918 354 | ដុល្លារ: 103 918 359'
+        },
+        acleda: {
+            title: 'ACLEDA Bank',
+            name: 'SUN PHANITH',
+            qrImage: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=KHQR_ACLEDA_SUN_PHANITH_PAYMENT',
+            details: 'ស្កែនជាមួយគ្រប់ Bank App ដែលគាំទ្រ KHQR'
+        }
+    };
+
+    // GLOBAL APP STATE
+    let servicesData = JSON.parse(localStorage.getItem('nd_services')) || defaultServices;
+    let ordersData = JSON.parse(localStorage.getItem('nd_orders')) || defaultOrders;
+    let cart = [];
+    let selectedBank = 'aba';
+    let uploadedReceiptBase64 = null;
+
+    // ON LOAD INITIALIZATION
+    window.onload = function() {
+        updateClock();
+        setInterval(updateClock, 1000);
+        renderClientServices('all');
+        renderClientFullServices();
+        renderClientOrderHistory();
+        renderAdminDashboard();
+    };
+
+    function saveData() {
+        localStorage.setItem('nd_services', JSON.stringify(servicesData));
+        localStorage.setItem('nd_orders', JSON.stringify(ordersData));
+        renderAdminDashboard();
+        renderClientOrderHistory();
+    }
+
+    // Live Clock
+    function updateClock() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2, '0');
+        const m = String(now.getMinutes()).padStart(2, '0');
+        document.getElementById('current-time').textContent = `${h}:${m}`;
+    }
+
+    // MAIN MODE SWITCHER (CLIENT APP vs ADMIN DASHBOARD)
+    function switchMainMode(mode) {
+        const clientView = document.getElementById('main-client-view');
+        const adminView = document.getElementById('main-admin-view');
+        const clientBtn = document.getElementById('mode-client-btn');
+        const adminBtn = document.getElementById('mode-admin-btn');
+
+        if (mode === 'client') {
+            clientView.classList.remove('hidden');
+            adminView.classList.add('hidden');
+            clientBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md';
+            adminBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white';
+        } else {
+            clientView.classList.add('hidden');
+            adminView.classList.remove('hidden');
+            adminBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md';
+            clientBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white';
+            renderAdminDashboard();
+        }
+    }
+
+    // PHONE OS SIMULATOR TOGGLE
+    function setOS(os) {
+        const hardware = document.getElementById('os-hardware');
+        const homeBar = document.getElementById('os-home-bar');
+        const btnIos = document.getElementById('btn-ios');
+        const btnAndroid = document.getElementById('btn-android');
+
+        if (os === 'ios') {
+            hardware.className = 'ios-notch flex items-center justify-center';
+            hardware.innerHTML = '<div class="w-10 h-1 bg-slate-800 rounded-full"></div>';
+            homeBar.style.display = 'block';
+            btnIos.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold text-white bg-purple-600';
+            btnAndroid.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold text-slate-400';
+        } else {
+            hardware.className = 'android-punch';
+            hardware.innerHTML = '';
+            homeBar.style.display = 'none';
+            btnAndroid.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold text-white bg-emerald-600';
+            btnIos.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold text-slate-400';
+        }
+    }
+
+    // CLIENT APP TABS
